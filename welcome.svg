@@ -1,323 +1,42 @@
-<svg fill="none" width="100%" height="100vh" xmlns="http://www.w3.org/2000/svg">
+<svg fill="none" width="100%"  xmlns="http://www.w3.org/2000/svg">
  <foreignObject width="100%" height="100%">
   <div xmlns="http://www.w3.org/1999/xhtml">
-    <style>
-      .body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      <style>
+        .wrapper {
+          height: 100vh;
+          display: grid;
+          place-items: center;
         }
 
-        p {
-            margin: 0;
-            text-align: start;
-            opacity: 0.9;
-            letter-spacing: var(-0.025em);
+        .text {
+          width: 9ch;
+          animation: typing 1.5s steps(9), blink .5s step-end infinite alternate;
+          white-space: nowrap;
+          overflow: hidden;
+          border-right: 3px solid;
+          font-family: monospace;
+          font-size: 4em;
+          background: linear-gradient(90deg, rgba(0,241,220,1) 0%, rgba(86,115,241,1) 44%, rgba(103,68,241,1) 54%, rgba(254,0,255,1) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            overflow: hidden;
+        @keyframes typing {
+          from {
+            width: 0
+          }
         }
 
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-<!--             background-image: url('https://hips.hearstapps.com/hmg-prod/images/01042023-dsf6015-675c4268be7e9.jpeg'); -->
-            background-size: cover;
-            background-position: center;
+        @keyframes blink {
+          from, to { border-color: transparent }
+          50% { border-color: rgba(254,0,255,1); }
         }
-
-        .glass-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-        }
-
-        .content {
-            position: relative;
-            z-index: 1;
-            /* padding: auto 10%; */
-            padding-left: 10%;
-            padding-right: 10%;
-            color: white;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 2px solid #ffffff20;
-            height: 70%;
-            display: flex;
-            overflow: hidden;
-        }
-
-        .sidebar {
-            background: rgba(0, 0, 0, 0.1);
-            border-right: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 24px 16px 24px 16px;
-            width: 250px;
-            flex: none;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-
-        .sidebarHeader {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            padding-left: 12px;
-        }
-
-        .sidebarTitle {
-            font-size: 24px;
-            font-weight: 700;
-            text-align: left;
-            opacity: 0.9;
-            line-height: 1;
-        }
-
-        .sidebarSubtitle {
-            font-weight: 400;
-            margin: 0;
-            opacity: 0.8;
-            text-align: left;
-        }
-
-        .linkContainer {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .linkItem {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 16px;
-            border-radius: 12px;
-            cursor: pointer;
-            padding: 8px 12px 8px 12px;
-        }
-
-        .linkItem:hover {
-            background-color: #ffffff20;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        a:visited {
-            color: inherit;
-        }
-
-        .main {
-            padding: 24px 28px 24px 28px;
-            width: auto;
-            display: flex;
-            flex: 1 1 auto;
-            flex-direction: column;
-            align-items: start;
-            gap: 24px;
-        }
-
-        .mainHeader {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .mainSubtitle {
-            font-size: 12px;
-            opacity: 0.8;
-            text-align: left;
-            letter-spacing: var(-0.025em);
-        }
-
-        .avatar {
-            max-width: 250px;
-            border-radius: 24px;
-            aspect-ratio: 1 / 1;
-        }
-
-        .profileHeader {
-            display: flex;
-            flex-direction: row;
-            gap: 24px;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-
-        .tagsContainer {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 8px 16px 8px 16px;
-            border-radius: 12px;
-            font-size: 18px;
-            opacity: 0.9;
-        }
-    </style>
-    <div class='body'>
-      <div class="container">
-        <div class="background"></div>
-        <div class="glass-overlay"></div>
-        <div class="content">
-            <div class="card">
-                <div class="sidebar">
-                    <div class="sidebarHeader">
-                        <p class="sidebarTitle">Mickael S.</p>
-                        <p class="sidebarSubtitle">Front-end developer</p>
-                    </div>
-                    <a href="https://www.mickaelk.com/en">
-                        <div class="linkContainer">
-                            <div class="linkItem">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round" class="lucide lucide-gallery-vertical-end">
-                                    <path d="M7 2h10" />
-                                    <path d="M5 6h14" />
-                                    <rect width="18" height="12" x="3" y="10" rx="2" />
-                                </svg>
-                                <p>Portfolio</p>
-                            </div>
-                    </a>
-                    <a href="www.linkedin.com/in/mickael-ks">
-                        <div class="linkItem">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-linkedin">
-                                <path
-                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                                <rect width="4" height="12" x="2" y="9" />
-                                <circle cx="4" cy="4" r="2" />
-                            </svg>
-                            <p>LinkedIn</p>
-                        </div>
-                    </a>
-                    <a href="https://www.malt.fr/profile/mickaelks">
-                        <div class="linkItem">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" aria-label="Malt" role="img"
-                                viewBox="0 0 512 512" fill="#ffffff" data-darkreader-inline-fill=""
-                                style="--darkreader-inline-fill: #ffffff;">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <rect width="512" height="512" rx="15%" fill="none" data-darkreader-inline-fill=""
-                                        style="--darkreader-inline-fill: #ffffff;"></rect>
-                                    <path fill="#ffffff"
-                                        d="m408.4 103.8c-32.5-32.4-67.1-11.4-88.8 10.2L114.8 318.8c-21.7 21.7-44.4 54.7-10.2 88.8c34.1 34.1 67 11.4 88.7-10.3l204.8-204.8c21.7-21.6 42.7-56.3 10.3-88.7zm-195.7-8.4 43.4 43.4 44.1-44.2c3-3 6-5.8 9.1-8.4c-4.6-23.3-17.9-44.4-53.3-44.4c-35.4 0-48.7 21.2-53.2 44.5c3.3 2.9 6.6 5.8 9.9 9.1zm87.5 322.1-44.1-44.1-43.4 43.3c-3.3 3.3-6.5 6.4-9.8 9.2c5 23.8 19 45.5 53.1 45.5c34.2 0 48.3-21.9 53.2-45.7c-3-2.6-6-5.2-9-8.2zm-105.9-217h-83.6c-30.7 0-70 9.7-70 55.5c0 34.3 21.9 48.3 45.8 53.2c2.8-3.2 107.8-108.7 107.8-108.7zm231.5 2.3c-2.6 3-107.9 108.8-107.9 108.8h82.4c30.7 0 70-7.3 70-55.6c0-35.3-21.1-48.6-44.5-53.2zm-204.1-29.7 14.9-14.9-43.3-43.4c-21.7-21.7-54.6-44.4-88.8-10.2c-25 25-19.4 49.4-6.2 69.1c4.1-.3 123.4-.6 123.4-.6zm68.7 165.9-15 15 44.2 44.1c21.7 21.7 56.3 42.7 88.7 10.3c24.2-24.2 18.7-49.7 5.3-70c-4.3.3-123.2.6-123.2.6z"
-                                        data-darkreader-inline-fill="" style="--darkreader-inline-fill: #ffffff90;">
-                                    </path>
-                                </g>
-                            </svg>
-                            <p>Malt</p>
-                        </div>
-                    </a>
-                    <a href="https://x.com/dxsignr_">
-                        <div class="linkItem">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-twitter">
-                                <path
-                                    d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-                            </svg>
-                            <p>Twitter</p>
-                        </div>
-                    </a>
-                    <a href="https://www.behance.net/dxsignr">
-                        <div class="linkItem">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                version="1.1" width="20" height="20" viewBox="0 0 256 256" xml:space="preserve">
-
-                                <defs>
-                                </defs>
-                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;"
-                                    transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                                    <path
-                                        d="M 58.938 41.512 c -1.498 0 -2.655 0.431 -3.476 1.278 c -0.827 0.845 -1.342 1.995 -1.553 3.45 h 10.04 v 0 c -0.109 -1.549 -0.626 -2.721 -1.557 -3.522 C 61.468 41.915 60.314 41.512 58.938 41.512 z"
-                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                    <path
-                                        d="M 37.047 40.939 c 0.842 -0.513 1.262 -1.425 1.262 -2.735 c 0 -1.447 -0.556 -2.408 -1.671 -2.87 c -0.958 -0.321 -2.185 -0.487 -3.672 -0.487 h -5.79 v 6.863 h 6.583 C 35.111 41.71 36.205 41.453 37.047 40.939 z"
-                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                    <path
-                                        d="M 36.964 47.388 c -0.737 -0.341 -1.777 -0.515 -3.111 -0.527 h -6.678 v 8.291 h 6.574 c 1.351 0 2.396 -0.177 3.151 -0.546 c 1.361 -0.678 2.043 -1.969 2.043 -3.885 C 38.943 49.105 38.282 47.988 36.964 47.388 z"
-                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                    <path
-                                        d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 c 24.853 0 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 52.625 30.735 h 12.529 v 3.112 h -0.001 H 52.625 V 30.735 z M 44.115 56.129 c -0.589 0.968 -1.321 1.785 -2.201 2.444 c -0.99 0.761 -2.163 1.283 -3.511 1.562 c -1.352 0.279 -2.816 0.42 -4.393 0.42 H 20 V 29.445 h 15.025 c 3.787 0.062 6.472 1.159 8.058 3.314 c 0.951 1.322 1.423 2.907 1.423 4.751 c 0 1.902 -0.477 3.424 -1.438 4.58 c -0.534 0.648 -1.324 1.238 -2.369 1.77 c 1.583 0.579 2.784 1.492 3.587 2.748 c 0.808 1.252 1.212 2.772 1.212 4.557 C 45.497 53.011 45.042 54.667 44.115 56.129 z M 69.994 50.084 H 53.769 c 0.089 2.24 0.863 3.806 2.329 4.702 c 0.884 0.562 1.956 0.837 3.212 0.837 c 1.324 0 2.403 -0.335 3.233 -1.023 c 0.453 -0.365 0.852 -0.879 1.197 -1.529 h 5.947 c -0.156 1.323 -0.872 2.664 -2.159 4.028 c -1.994 2.167 -4.79 3.253 -8.381 3.253 c -2.967 0 -5.581 -0.916 -7.85 -2.742 c -2.262 -1.832 -3.398 -4.804 -3.398 -8.927 c 0 -3.866 1.02 -6.825 3.066 -8.885 c 2.054 -2.064 4.705 -3.091 7.972 -3.091 c 1.937 0 3.683 0.346 5.24 1.042 c 1.553 0.697 2.836 1.793 3.847 3.3 c 0.915 1.327 1.503 2.862 1.777 4.609 C 69.953 46.677 70.022 48.154 69.994 50.084 z"
-                                        style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;"
-                                        transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                                </g>
-                            </svg>
-                            <p>Behance</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="main">
-                <div class="mainHeader">
-                    <p class="sidebarTitle">Hi there! 👋 I'm Mickael S.</p>
-                    <p class="mainSubtitle">🚀 Frontend Developer | React & TypeScript Enthusiast</p>
-                </div>
-                <div class="profileHeader">
-<!--                     <img src="https://avatars.githubusercontent.com/u/34456358" class="avatar" /> -->
-                    <p>Passionate about building modern and intuitive web and mobile applications, I specialize in
-                        React, React Native, and TypeScript. I focus on creating clean, scalable, and maintainable code
-                        while ensuring great user experiences.</p>
-                </div>
-                <div class="mainHeader">
-                    <p class="sidebarTitle">Technologies & Tools</p>
-                </div>
-                <div class="tagsContainer">
-                    <div class="tag">React</div>
-                    <div class="tag">React-Native</div>
-                    <div class="tag">TypeScript</div>
-                    <div class="tag">JavaScript</div>
-                    <div class="tag">HTML</div>
-                    <div class="tag">CSS</div>
-                    <div class="tag">TailwindCSS</div>
-                    <div class="tag">Material-UI</div>
-                    <div class="tag">Figma</div>
-                    <div class="tag">Git</div>
-                    <div class="tag">GitHub</div>
-                    <div class="tag">VSCode</div>
-                    <div class="tag">Jest</div>
-                </div>
-            </div>
+      </style>
+      <div class="wrapper">
+        <div class="text">
+          Testing.
         </div>
-    </div>
-    </div>
+      </div>
   </div>
-  </foreignObject>
+ </foreignObject>
 </svg>
