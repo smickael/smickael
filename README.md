@@ -1,18 +1,22 @@
-<div style="width: 100%;">
-    <img src="welcome.svg" style="width: 100%;" alt="Click to see the source">
-</div>
+# Hi, I'm Mickaël 👋
 
-<!--
-**smickael/smickael** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Front-end & mobile developer based in Paris. I build interfaces that are fast, accessible and consistent across devices, from web apps to native iOS.
 
-Here are some ideas to get you started:
+### 🚧 What I'm working on
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+Currently at **[Wealthcome](https://github.com/wealthcome-SAS)**, where I work on the CGP platform and its **design system**: component architecture, layout migrations and UI consistency across the product.
+
+### 🛠 Stack
+
+**Web**: React · TypeScript · Next.js · TailwindCSS · Node.js
+**Mobile**: SwiftUI · React Native
+**Design**: Design systems · Figma · UI/UX
+
+Also a 42 alumnus: C, Unix and web fundamentals projects are archived in my repositories.
+
+<img src="https://images.credly.com/size/340x340/images/09c6fe3f-1399-49ca-a04c-17f40ed4d927/blob" width="150" alt="Credly badge">
+
+### 📫 Get in touch
+
+[Portfolio](http://mickaelk.com/) · [LinkedIn](https://www.linkedin.com/in/mickael-ks) · [Behance](https://www.behance.net/dxsignr) · [X](https://x.com/dxsignr_)
+
